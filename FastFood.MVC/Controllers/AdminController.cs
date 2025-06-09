@@ -42,6 +42,7 @@ namespace FastFood.MVC.Controllers
             _context = context;
             _dashboardService = dashboardService;
         }
+
         [Authorize(Policy = "AdminAccess")]
         [Route("Accounts")]
         public async Task<IActionResult> Index()

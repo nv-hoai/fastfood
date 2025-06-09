@@ -44,12 +44,11 @@
     </div>
 
     <div class="table-responsive">
-        <table class="table table-striped table-hover">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Người gửi</th>
-                    <th>Email</th>
                     <th>Nội dung</th>
                     <th>Ngày gửi</th>
                     <th>Trạng thái</th>
@@ -60,9 +59,8 @@
                 @foreach (var message in Model.Messages)
                 {
                     <tr class="@(message.Status == MessageStatus.UnReplied ? "table-warning" : "")">
-                        <td>@message.Id</td>
+                        <td width="50px">@message.Id</td>
                         <td>@message.SenderName</td>
-                        <td>@message.Email</td>
                         <td>@(message.Content.Length > 50 ? message.Content.Substring(0, 50) + "..." : message.Content)</td>
                         <td>@message.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
                         <td>
@@ -86,7 +84,8 @@
                                 </a>
                             }
                             <form asp-action="Delete" asp-route-id="@message.Id" method="post"
-                                    onsubmit="return confirm('Bạn có chắc chắn muốn xóa tin nhắn này?');">
+                                  onsubmit="return confirm('Bạn có chắc chắn muốn xóa tin nhắn này?');"
+                                  class="d-inline">
                                 <button type="submit" class="btn btn-sm btn-danger">
                                     <i class="bi bi-trash"></i> Xóa
                                 </button>

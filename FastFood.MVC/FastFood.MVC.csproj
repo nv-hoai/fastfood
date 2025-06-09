@@ -8,17 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Authorization\**" />
-    <Compile Remove="Pages\**" />
-    <Content Remove="Authorization\**" />
-    <Content Remove="Pages\**" />
-    <EmbeddedResource Remove="Authorization\**" />
-    <EmbeddedResource Remove="Pages\**" />
-    <None Remove="Authorization\**" />
-    <None Remove="Pages\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.24.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.14" />
