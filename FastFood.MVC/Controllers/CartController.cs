@@ -137,7 +137,7 @@ namespace FastFood.MVC.Controllers
             return Json(new
             {
                 success = true,
-                message = $"Đã thêm sản phẩm {productID} vào giỏ hàng!",
+                message = $"Đã thêm sản phẩm [#{productID}-{product.Name}] vào giỏ hàng!",
                 cartCount = carts.Sum(c => c.Quantity) + (existingItem == null ? quantity : 0)
             });
         }
@@ -208,7 +208,7 @@ namespace FastFood.MVC.Controllers
 			return Json(new
 			{
 				success = true,
-				message = $"Xóa thành công sản phẩm mã #{productID} khỏi giỏ hàng!"
+				message = $"Xóa thành công sản phẩm mã [#{productID}-{cartItem.ProductName}] khỏi giỏ hàng!"
 			});
 		}
 
@@ -239,7 +239,7 @@ namespace FastFood.MVC.Controllers
 				return Json(new
 				{
 					success = true,
-					message = $"Đã xóa sản phẩm mã #{productID} vì số lượng nhỏ hơn hoặc bằng 0."
+					message = $"Đã xóa sản phẩm mã [#{productID}-{cartItem.ProductName}] vì số lượng nhỏ hơn hoặc bằng 0."
 				});
 			}
 
@@ -250,7 +250,7 @@ namespace FastFood.MVC.Controllers
 			return Json(new
 			{
 				success = true,
-				message = $"Thành công thay đổi số lượng sản phẩm #{productID} thành {quantity}."
+				message = $"Thành công thay đổi số lượng sản phẩm [#{productID}-{cartItem.ProductName}] thành {quantity}."
 			});
 		}
 
@@ -289,7 +289,7 @@ namespace FastFood.MVC.Controllers
 
             var count = await _context.CartItems
                 .Where(c => c.CustomerID == customer.CustomerID)
-                .SumAsync(c => c.Quantity);
+                .CountAsync();
 
             return Json(new { count });
         }

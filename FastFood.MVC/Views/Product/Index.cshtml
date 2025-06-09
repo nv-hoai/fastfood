@@ -129,7 +129,7 @@ else
                                         <p class="text-body">@product.Description</p>
                                         <span class="text-primary me-1">@((product.Price * 1000).ToString("#,##0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))) VND</span>
                                     </div>
-                                    <div class="d-flex border-top">
+                                    <div class="d-flex border-top mt-auto">
                                         <small class="w-50 text-center border-end py-2">
                                             <a onclick="createOrderNow(@product.ProductID)" class="btn text-body">Đặt ngay</a>
                                         </small>

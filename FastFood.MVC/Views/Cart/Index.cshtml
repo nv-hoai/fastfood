@@ -258,13 +258,13 @@
                 let shippingFee = parseInt($('#shippingFee').text().replace(/[^\d]/g, '')) || 0;
                 let totalCharge = total + shippingFee;
 
-                $('#totalAmount').text(total.toLocaleString('vi-VN', { minimumFractionDigits: 0 }) + ' VND');
-                $('#totalCharge').text(totalCharge.toLocaleString('vi-VN', { minimumFractionDigits: 0 }) + ' VND');
+                $('#totalAmount').text(total.toLocaleString('vi-VN', { minimumFractionDigits: 0 }));
+                $('#totalCharge').text(totalCharge.toLocaleString('vi-VN', { minimumFractionDigits: 0 }));
             }
 
             $('#btnPriority, #btnFast, #btnEconomical').click(function () {
                 var shippingFee = parseInt($(this).data('shippingfee')) || 0;
-                $('#shippingFee').text(shippingFee.toLocaleString('vi-VN', { minimumFractionDigits: 0 }) + ' VND');
+                $('#shippingFee').text(shippingFee.toLocaleString('vi-VN', { minimumFractionDigits: 0 }));
                 updateTotal();
             });
 

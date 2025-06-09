@@ -38,7 +38,7 @@
                     <dd class="col-sm-8">@GetShippingMethodDisplayName(Model.ShippingMethod)</dd>
 
                     <dt class="col-sm-4">Phí vận chuyển:</dt>
-                    <dd class="col-sm-8">@Model.ShippingFee.ToString("N0") 000 VND</dd>
+                    <dd class="col-sm-8">@Model.ShippingFee.ToString("N0").000 VND</dd>
                     <dt class="col-sm-4">Ngày tạo đơn:</dt>
                     <dd class="col-sm-8">@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")</dd>
                 </dl>
@@ -157,24 +157,24 @@
                     <tr>
                         <td>@item.ProductName</td>
                         <td>@item.Quantity</td>
-                        <td>@item.UnitPrice.ToString("N0") 000 VND</td>
-                        <td>@item.DiscountedPrice.ToString("N0") 000 VND</td>
-                        <td>@item.SubTotal.ToString("N0") 000 VND</td>
+                        <td>@item.UnitPrice.ToString("N0").000 VND</td>
+                        <td>@item.DiscountedPrice.ToString("N0").000 VND</td>
+                        <td>@item.SubTotal.ToString("N0").000 VND</td>
                     </tr>
                 }
             </tbody>
             <tfoot>
                 <tr>
                     <td colspan="4" class="text-end"><strong>Tổng tiền hàng:</strong></td>
-                    <td>@Model.SubTotal.ToString("N0") 000 VND</td>
+                    <td>@Model.SubTotal.ToString("N0").000 VND</td>
                 </tr>
                 <tr>
                     <td colspan="4" class="text-end"><strong>Phí giao hàng:</strong></td>
-                    <td>@Model.ShippingFee.ToString("N0") 000 VND</td>
+                    <td>@Model.ShippingFee.ToString("N0").000 VND</td>
                 </tr>
                 <tr>
                     <td colspan="4" class="text-end"><strong>Tổng thanh toán:</strong></td>
-                    <td><strong>@(Model.TotalCharge?.ToString("N0") ?? "0") 000 VND</strong></td>
+                    <td><strong>@(Model.TotalCharge?.ToString("N0") ?? "0").000 VND</strong></td>
                 </tr>
             </tfoot>
         </table>
