@@ -38,6 +38,8 @@ namespace FastFood.MVC.Controllers
                     Selected = !string.IsNullOrEmpty(orderStatus) && e.ToString() == orderStatus
                 }).ToList();
 
+            // var test = ViewBag.Statu;
+
             // Parse orderStatus to the enum if provided
             OrderStatus? statusFilter = null;
             if (!string.IsNullOrEmpty(orderStatus) && Enum.TryParse<OrderStatus>(orderStatus, out var parsedStatus))

@@ -19,7 +19,7 @@ namespace FastFood.MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> GetNotifications()
         {
-            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
             var notifications = await _notificationService.GetUserNotifications(userID);
             return Json(notifications);
         }
@@ -27,7 +27,7 @@ namespace FastFood.MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUnreadCount()
         {
-            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
             var count = await _notificationService.GetUnreadCount(userID);
             return Json(new { count });
         }
@@ -44,7 +44,7 @@ namespace FastFood.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> MarkAllAsRead()
         {
-            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
             await _notificationService.MarkAllAsRead(userID);
             return Json(new { success = true });
         }

@@ -1,7 +1,9 @@
+#pragma warning disable
 using FastFood.MVC.Data;
 using FastFood.MVC.Models;
 using FastFood.MVC.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace FastFood.MVC.Services
 {
