@@ -83,6 +83,15 @@ Các Bảng Chính:
 
 ---
 
+## Ảnh demo
+
+### HomePage
+![HomePage-1](images/homepage.png)
+![HomePage-2](images/homepage_2.png)
+
+### Thực đơn
+![Product](images/product)
+
 ## Cài Đặt & Thiết Lập
 
 ### Yêu Cầu Hệ Thống
